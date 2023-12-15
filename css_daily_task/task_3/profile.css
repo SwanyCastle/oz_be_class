@@ -1,0 +1,47 @@
+* {
+    /* text-align: center; */
+    font-size: 16px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+html {
+    background-color: beige;
+}
+
+body {
+    width: 640px;
+    margin: auto;   /* 너비에서 남는 여백을 동일하게 분배 */
+}
+
+h1 {
+    font-size: 48px;
+}
+
+img {
+    width: 500px;
+    border-radius: 50px;
+}
+
+p {
+    font-size: 1.2rem;
+}
+
+q {
+    color: chocolate;
+}
+
+strong {
+    color: brown;
+}
+
+.textalign_center {
+    text-align: center;
+}
+
+.textalign_left {
+    text-align: left;
+}
+
+.textalign_right {
+    text-align: right;
+}

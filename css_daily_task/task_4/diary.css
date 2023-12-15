@@ -1,0 +1,30 @@
+.weather_size {
+    width: 30px;
+}
+
+.moon_size {
+    width: 800px;
+    height: 300px;
+}
+
+table {
+    width: 800px;
+    border: 1px dashed;
+    border-radius: 10px;
+    text-align: center;
+    margin: 10px;
+}
+
+.table_size {
+    width: 800px;
+    height: 300px;
+}
+
+td {
+    width: 65px;
+    height: 35px;
+}
+
+div {
+    text-align: center;
+}
