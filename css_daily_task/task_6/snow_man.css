@@ -4,6 +4,7 @@ html {
 
 body {
     height: 100%;
+    margin: 0;
 }
 
 .container {
@@ -90,7 +91,7 @@ body {
     transform: rotate(-145deg);
     background-color: brown;
     position: relative;
-    left: 870px;
+    left: 885px;
 }
 .right_arm {
     float: right;
@@ -99,7 +100,7 @@ body {
     transform: rotate(-45deg);
     background-color: brown;
     position: relative;
-    right: 870px;
+    right: 885px;
     bottom: 90px;
 }
 
