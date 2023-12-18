@@ -1,0 +1,141 @@
+body {
+    display: contents;
+  }
+  
+  .top-navi-bar {
+    align-items: center;
+    padding: 6px;
+  }
+  
+  .top-navi-bar-left {
+    float: left;
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+  
+  .top-navi-bar-right {
+    float: right;
+    margin-top: 20px;
+    margin-right: 40px;
+  }
+  
+  .top-navi-items {
+    padding: 5px;
+    margin: 0 5px;
+    font-size: 14px;
+    font-family: Apple SD Gothic Neo, arial, sans-serif;
+    color: #202124;
+    text-decoration: none;
+  }
+  
+  .top-navi-items:hover {
+    text-decoration: underline;
+    color: #1a0dab;
+  }
+  
+  .main {
+    margin-top: 300px;
+    text-align: center;
+  }
+  
+  .input-style {
+    width: 584px;
+    height: 48px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-radius: 24px;
+    background: #fff;
+    border: 1px solid #dfe1e5;
+  }
+  
+  .search-style {
+    position: relative;
+    left: 40px;
+    color: #9aa0a6;
+  }
+  
+  .keyboard-style {
+    position: relative;
+    right: 100px;
+    color: #9aa0a6;
+  }
+  
+  .mic-style {
+    position: relative;
+    right: 90px;
+    color: #9aa0a6;
+  }
+  
+  .camera-style {
+    position: relative;
+    right: 80px;
+    color: #9aa0a6;
+  }
+  
+  .button-style {
+    background-color: #f8f9fa;
+    border: 1px solid #f8f9fa;
+    border-radius: 4px;
+    color: #3c4043;
+    font-family: Apple SD Gothic Neo, arial, sans-serif;
+    font-size: 14px;
+    padding: 0 16px;
+    margin: 11px 4px;
+    text-align: center;
+    height: 36px;
+  }
+  
+  .button-style:hover {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+    background-color: #f8f9fa;
+    border: 1px solid #dadce0;
+    color: #202124;
+  }
+  
+  .footer-stlye {
+    position: absolute;
+    bottom: 0px;
+    background: #f2f2f2;
+    width: 100%;
+  }
+  
+  .location-style {
+    padding: 15px 30px;
+    border-bottom: 1px solid #dadce0;
+    font-size: 15px;
+    color: #70757a;
+    font-family: Apple SD Gothic Neo, arial, sans-serif;
+  }
+  
+  .bottom-navi-bar {
+    align-items: center;
+    font-size: 14px;
+    font-family: Apple SD Gothic Neo, arial, sans-serif;
+    padding: 15px 0px;
+  }
+  
+  .bottom-navi-bar-left {
+    align-items: center;
+    float: left;
+    margin-left: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .bottom-navi-bar-right {
+    align-items: center;
+    float: right;
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .bottom-navi-bar-left-items {
+    text-decoration: none;
+    padding: 15px;
+    color: #70757a;
+  }
+  
+  .bottom-navi-bar-right-items {
+    text-decoration: none;
+    padding: 15px;
+    color: #70757a;
+  }

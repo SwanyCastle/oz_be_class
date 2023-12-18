@@ -1,0 +1,49 @@
+* { 
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+img {
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+}
+
+label {
+    position: relative;
+    bottom: 20px;
+}
+
+.container {
+    height: 100%;
+    background-color: darkslategray;
+}
+
+.sideBar__column {
+    height: 350px;
+    width: 200px;
+    float: left;
+    text-align: center;
+    padding: 15px;
+    border-radius: 30px 0px 0px 30px;
+    background-color: gray;
+}
+
+.info__column {
+    width: calc(100% - 200px);
+    height: 350px;
+    float: left;
+    text-align: left;
+    padding: 15px;
+    border-radius: 0px 30px 30px 0px;
+    background-color: white;
+}
