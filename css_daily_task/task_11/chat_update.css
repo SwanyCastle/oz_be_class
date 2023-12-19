@@ -23,11 +23,17 @@ body {
 }
 
 /* 유저 정보 표시되는 부분 */
+.chat-screen__bar {
+    height: 80px;
+}
+
 .user {
     background-color: white;
     padding: 16px;
     height: 80px;
-    /* position: fixed; */
+    position: sticky;
+    top: 0px;
+    z-index: 1;
 }
 
 .user__column {
