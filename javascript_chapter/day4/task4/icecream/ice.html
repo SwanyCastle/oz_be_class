@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>아이스크림</title>
+  </head>
+  <body>
+    <button id="input">아이스크림 종류 추가</button>
+    <button id="output_item">아이스크림 이름 출력</button>
+    <button id="output_list">입력한 아이스크림 목록 출력</button>
+    <h3>입력한 아이스크림 목록 :</h3>
+    <script>
+      const input = document.getElementById("input");
+      const output_item = document.getElementById("output_item");
+      const output_list = document.getElementById("output_list");
+      const h3 = document.querySelector("h3");
+
+      let icecream = [];
+
+      input.addEventListener("click", function () {
+        let input_icecream = prompt("추가하고 싶은 아이스크림을 입력헤주세요.");
+        icecream.push(input_icecream);
+      });
+
+      output_item.addEventListener("click", function () {
+        if (icecream.length > 0) {
+          for (let i = 0; i < icecream.length; i++) {
+            alert(icecream[i]);
+          }
+        } else {
+          alert("입력된 아이스크림이 없습니다.");
+        }
+      });
+
+      output_list.addEventListener("click", function () {
+        if (icecream.length > 0) {
+          let output_icecream = "";
+          for (let i = 0; i < icecream.length; i++) {
+            output_icecream += icecream[i] + " ";
+          }
+          h3.textContent = `입력한 아이스크림 목록 : ${output_icecream}`;
+        } else {
+          h3.textContent = `입력한 아이스크림 목록 : 입력된 아이스크림이 없습니다.`;
+        }
+      });
+    </script>
+  </body>
+</html>
