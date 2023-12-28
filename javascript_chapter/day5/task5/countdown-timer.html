@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./images/oz_icon.png" />
+    <title>오즈코딩스쿨 | 카운트다운 타이머</title>
+    <style>
+      .footer {
+        font-size: 12px;
+        text-align: center;
+        margin-top: 200px;
+      }
+      .footer a {
+        color: hsl(282, 100%, 21%);
+        text-decoration: none;
+      }
+
+      body {
+        font-family: "Arial", sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f4f4f4;
+        margin: 0;
+      }
+
+      .countdown {
+        display: flex;
+        font-size: 2rem;
+      }
+
+      .countdown span {
+        margin: 0 10px;
+      }
+
+      .countdown span:first-child {
+        margin-left: 0;
+      }
+
+      .countdown span:nth-child(2n) {
+        margin-top: 15px;
+        font-size: 1rem;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .new {
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="new">
+        <p>新年まで残り時間</p>
+      </div>
+      <div class="countdown" id="countdown">
+        <span id="days">00</span>
+        <span clas="text">日</span>
+        <span id="hours">00</span>
+        <span clas="text">時</span>
+        <span id="minutes">00</span>
+        <span clas="text">分</span>
+        <span id="seconds">00</span>
+        <span clas="text">秒</span>
+      </div>
+      <div class="footer">
+        © 2023. <a href="https://ozcodingschool.com/" target="_blank">ozcodingschool</a>. All rights
+        reserved. Developed by <a href="#">[郭升桓]</a>.
+      </div>
+    </div>
+    <script>
+      const days = document.getElementById("days");
+      const hours = document.getElementById("hours");
+      const minutes = document.getElementById("minutes");
+      const seconds = document.getElementById("seconds");
+
+      let new_year = new Date(2023, 11, 31, 23, 59, 59);
+      let result = setInterval(function () {
+        let now = new Date();
+
+        let diff_d = new_year.getDate() - now.getDate();
+        let diff_h = new_year.getHours() - now.getHours();
+        let diff_m = new_year.getMinutes() - now.getMinutes();
+        let diff_s = new_year.getSeconds() - now.getSeconds() + 1;
+
+        if (diff_d < 10) {
+          diff_d = "0" + diff_d;
+        }
+        if (diff_h < 10) {
+          diff_h = "0" + diff_h;
+        }
+        if (diff_m < 10) {
+          diff_m = "0" + diff_m;
+        }
+        if (diff_s < 10) {
+          diff_s = "0" + diff_s;
+        }
+
+        days.textContent = diff_d;
+        hours.textContent = diff_h;
+        minutes.textContent = diff_m;
+        seconds.textContent = diff_s;
+      }, 1000);
+    </script>
+  </body>
+</html>
