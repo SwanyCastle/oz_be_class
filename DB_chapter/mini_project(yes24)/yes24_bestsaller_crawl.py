@@ -15,7 +15,8 @@ options_ = Options()
 options_.add_argument(f'user-agent={header_user}')
 service = Service(ChromeDriverManager().install())
 
-browser = webdriver.Chrome(service=service, options=options_)
+# browser = webdriver.Chrome(service=service, options=options_)
+browser = webdriver.Chrome()
 
 links = []
 for i in range(1, 4):
@@ -82,8 +83,11 @@ with conn.cursor() as cursor:
             parts = full_text.split(" | ") 
             ranking_part = parts[0]
             ranking = ''.join(filter(str.isdigit, ranking_part)) # 숫자만 추출
-            ranking_weeks_part = parts[1]
-            ranking_weeks = ''.join(filter(str.isdigit, ranking_weeks_part.split()[-1]))
+            if len(parts) > 1:
+                ranking_weeks_part = parts[1]
+                ranking_weeks = ''.join(filter(str.isdigit, ranking_weeks_part.split()[-1]))
+            else:
+                ranking_weeks = 0
         else:
             ranking = 0
             ranking_weeks = 0
