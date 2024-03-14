@@ -1,9 +1,0 @@
-const nameElement = document.querySelector("#name");
-const animalElement = document.querySelector("#animal");
-const fruitElement = document.querySelector("#fruit");
-let name = prompt("당신의 이름은 무엇입니까?");
-let animal = prompt("좋아하는 동물은 무엇입니까?");
-let fruit = prompt("좋아하는 과일은 무엇입니까?");
-nameElement.textContent = name;
-animalElement.textContent = `좋아하는 동물은 ${animal} 입니다.`;
-fruitElement.textContent = `좋아하는 과일은 ${fruit} 입니다.`;
