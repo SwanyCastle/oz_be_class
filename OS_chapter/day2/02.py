@@ -2,4 +2,5 @@
 
 import os
 
+# pid 는 process id 
 print('파이썬 코드 실행중 ! 실행중인 프로세스의 아이디는 : ', os.getpid())

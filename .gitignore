@@ -6,6 +6,9 @@
 __pycache__/
 *.py[cod]
 *$py.class
+day1.md
+day2.md
+images
 
 # C extensions
 *.so
