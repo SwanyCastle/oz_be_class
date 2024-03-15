@@ -10,8 +10,8 @@ for proc in psutil.process_iter():
     try:
         ps_id = proc.pid
         if current_ps_id == ps_id:
-            equal_pid_ps.append(proc.name())
             equal_pid_ps.append(proc.pid)
+            equal_pid_ps.append(proc.name())
     except psutil.NoSuchProcess:
         pass
 
