@@ -75,3 +75,164 @@ page fault 가 진행 될때는 cpu 가 아무것도 하지 않아서 cpu 사용
 이렇게 하면 working set 에는 현재 프로세스가 실행될 때 필요한 지역성에 해당하는 페아자들만 들어있기 때문에 page fault 를 최소화 할 수 있다.
 
 page fault 는 working set window 가 이동할때만 발생한다.
+
+## 연결리스트 (Linked List)
+연결리스트는 여러 요소들이 서로 연결되어 있는 데이터 구조를 말한다. 
+각 요소는 데이터를 저장하는 노드로 구성되어있고, 노드는 데이터 필드와 다음 노드를 가리키는 링크(포인터)로 이루어져 있다.
+
+- 장점 삽입과 삭제가 빠르다
+  특히 단일 연결리스트에서는 리스트의 중간에 삽입 이나 삭제 할때 삽입될 노드가 가리키는 노드를 앞의 노드로, 뒤의 노드가 가리키는 노드를 삽입될 노드로 주소 변경해 주면 끝이다.
+  동적으로 크기가 조절될 수 있다. 즉, 실행 시간에 요소를 추가하거나 제거할 수 있다.
+
+- 임의에 요소에 접근하는 것이 오래걸린다.
+  인덱스처럼 바로 접근하는 것이아니라 맨 처음 요소부터 주소를 찾아가기 때문에 오래걸린다.
+  포인터를 저장하는 메모리 공간을 추가로 할당해야 하기 때문에 기존의 배열같은 자료구조 보다 더 많은 공간을 차지한다.
+
+* 단일 연결리스트
+```
+// 단일 연결 리스트
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+// 노드 구조체 정의
+typedef struct Node {
+    char *data;
+    struct Node *next;
+} node;
+
+
+// 새로운 노드 생성
+struct Node* createNode(node **head_ref, char *str_data) {
+    // 노드 생성
+    node* newNode = (node*)malloc(sizeof(node));
+    newNode->data = strdup(str_data);
+    newNode->next = *head_ref;
+    *head_ref = newNode;
+}
+
+int main() {
+    // 연결 리스트 생성 및 초기화
+    node *head = NULL;
+
+    createNode(&head, "Head");
+    createNode(&head, "Apple");
+    createNode(&head, "Banana");
+
+    // 연결 리스트 출력
+    printf("단일 연결 리스트: ");
+    while (head != NULL) {
+        printf("%s ", head->data);
+        head = head->next;
+    }
+    printf("\n");
+
+    return 0;
+}
+```
+
+* 이중 연결 리스트
+```
+// 이중 연결 리스트
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+// 노드 구조체 정의
+typedef struct Node {
+    char *data;
+    struct Node *prev;
+    struct Node *next;
+} node;
+
+// 새로운 노드 생성
+struct Node* createNode(node **head_ref, char *str_data) {
+    // 노드 생성
+    node* newNode = (node*)malloc(sizeof(node));
+    newNode->data = strdup(str_data);
+    newNode->next = *head_ref;
+
+    // 이전 노드를 NULL로 설정
+    newNode->prev = NULL;
+
+    // 현재 헤드가 NULL이 아니면, 현재 헤드의 이전 노드를 새로운 노드로 설정
+    if (*head_ref != NULL)
+        (*head_ref)->prev = newNode;
+
+    // 헤드를 새로운 노드로 업데이트
+    *head_ref = newNode;
+}
+
+int main() {
+    // 연결 리스트 생성 및 초기화
+    node *head = NULL;
+
+    createNode(&head, "Head");
+    createNode(&head, "Apple");
+    createNode(&head, "Banana");
+
+    // 연결 리스트 출력
+    printf("이중 연결 리스트: ");
+    while (head != NULL) {
+        printf("%s ", head->data);
+        head = head->next;
+    }
+    printf("\n");
+
+    return 0;
+}
+```
+
+* 원형 연결 리스트
+```
+// 원형 연결 리스트
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+// 노드 구조체 정의
+typedef struct Node {
+    char *data;
+    struct Node *next;
+} node;
+
+// 새로운 노드 생성
+node* createNode(node **head_ref, char *str_data) {
+    // 노드 생성
+    node* newNode = (node*)malloc(sizeof(node));
+    newNode->data = strdup(str_data);
+    newNode->next = NULL;
+
+    // 헤드가 NULL인 경우, 새로운 노드를 가리키게 함
+    if (*head_ref == NULL) {
+        newNode->next = newNode;
+        *head_ref = newNode;
+    } else {
+        // 헤드가 NULL이 아닌 경우, 새로운 노드를 헤드의 다음 노드로 삽입
+        newNode->next = (*head_ref)->next;
+        (*head_ref)->next = newNode;
+    }
+}
+
+int main() {
+    // 연결 리스트 생성 및 초기화
+    node *head = NULL;
+
+    createNode(&head, "Head");
+    createNode(&head, "Apple");
+    createNode(&head, "Banana");
+
+    // 연결 리스트 출력
+    printf("원형 연결 리스트: ");
+    node* temp = head;
+    if (head != NULL) {
+        do {
+            printf("%s ", temp->data);
+            temp = temp->next;
+        } while (temp != head);
+    }
+    printf("\n");ß
+
+    return 0;
+}
+```
