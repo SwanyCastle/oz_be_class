@@ -90,7 +90,7 @@ page fault 는 working set window 가 이동할때만 발생한다.
 
   
 ![연결리스트](./Linked_List_image/연결리스트.png)
-
+> 츨처 - https://yjg-lab.tistory.com/118
 
 * 단일 연결리스트
 ```
